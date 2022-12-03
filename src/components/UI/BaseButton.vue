@@ -1,5 +1,5 @@
 <template>
-  <button :class="[btnClass, 'btn']" :type="type">
+  <button :class="[btnClass, 'btn-2']" :type="type">
     <slot></slot>
   </button>
 </template>
@@ -13,9 +13,15 @@ export default {
 };
 </script>
 <style>
-.btn {
+.btn-2 {
   border-radius: 5px;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .primary {
   background: #f0f0fe;

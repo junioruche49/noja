@@ -14,55 +14,56 @@
   </nav>
 </template>
 <script>
+import { ref } from "vue";
 import BaseButton from "../UI/BaseButton.vue";
 import NavBars from "../UI/NavBars.vue";
 export default {
   components: { NavBars, BaseButton },
-  data() {
-    return {
-      pages: [
-        {
-          name: "Dashboard",
-          status: false,
-          icon: "menu-icon.svg",
-        },
-        {
-          name: "Customers",
-          status: false,
-          icon: "users.svg",
-        },
-        {
-          name: "Products",
-          status: false,
-          icon: "package.svg",
-        },
-        {
-          name: "Transactions",
-          status: true,
-          icon: "file-minus.svg",
-        },
-        {
-          name: "Discounts",
-          status: false,
-          icon: "Frame.svg",
-        },
-        {
-          name: "Customers Groups",
-          status: false,
-          icon: "users.svg",
-        },
-        {
-          name: "Invoices",
-          status: false,
-          icon: "file-minus-1.svg",
-        },
-        {
-          name: "Sales Targets",
-          status: false,
-          icon: "target.svg",
-        },
-      ],
-    };
+  setup() {
+    let pages = ref([
+      {
+        name: "Dashboard",
+        status: false,
+        icon: "menu-icon.svg",
+      },
+      {
+        name: "Customers",
+        status: false,
+        icon: "users.svg",
+      },
+      {
+        name: "Products",
+        status: false,
+        icon: "package.svg",
+      },
+      {
+        name: "Transactions",
+        status: true,
+        icon: "file-minus.svg",
+      },
+      {
+        name: "Discounts",
+        status: false,
+        icon: "Frame.svg",
+      },
+      {
+        name: "Customers Groups",
+        status: false,
+        icon: "users.svg",
+      },
+      {
+        name: "Invoices",
+        status: false,
+        icon: "file-minus-1.svg",
+      },
+      {
+        name: "Sales Targets",
+        status: false,
+        icon: "target.svg",
+      },
+    ]);
+
+    return { pages };
   },
 };
 </script>
@@ -71,5 +72,9 @@ nav {
   background-color: #f9fafc;
   border-right: 0.5px solid #ccc;
   height: 100%;
+}
+.btn-icon {
+  position: absolute;
+  right: 14px;
 }
 </style>

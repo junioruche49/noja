@@ -33,7 +33,7 @@ export default {
   padding-right: 0;
 }
 .main-color {
-  background: #f5f5f5;
+  background: #f5f6fd;
 }
 .no-padding {
   padding: 0;
