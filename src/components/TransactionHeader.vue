@@ -2,15 +2,17 @@
   <div class="row trans-header-bg-white">
     <div class="col-12 no-padding">
       <div class="form-row">
-        <base-button class="primary mr-3"
+        <base-button class="primary mr-3 pr-3"
           ><img src="../assets/plus.svg" class="img-btn mr-2 ml-1" /> Add
           Income</base-button
         >
-        <base-button class="secondary mr-3" @click="$emit('toggle-expense')"
+        <base-button
+          class="secondary mr-3 pr-3"
+          @click="$emit(emits('toggle-expense'))"
           ><img src="../assets/plus-2.svg" class="img-btn mr-2 ml-1" /> Add
           Expense</base-button
         >
-        <base-button class="tertiary mr-3">View Debts</base-button>
+        <base-button class="tertiary mr-3 pr-3 pl-3">View Debts</base-button>
         <input
           type="text"
           class="form-control form-width-7 mr-3"
@@ -24,18 +26,10 @@
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 import BaseButton from "./UI/BaseButton.vue";
-export default {
-  components: { BaseButton },
-  name: "TransactionHeader",
-  emits: ["toggle-expense"],
-  methods: {
-    clickIt() {
-      console.log("erere");
-    },
-  },
-};
+import { defineEmits } from "vue";
+const emits = defineEmits(["toggle-expense"]);
 </script>
 <style>
 .trans-header-bg-white {
@@ -48,7 +42,13 @@ export default {
   padding-left: 0;
 }
 .form-width-7 {
-  width: 59%;
+  width: 56%;
+  background: url("../assets/search.svg") no-repeat scroll 7px 7px;
+  padding-left: 30px;
+  font-size: 13px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #f5f6fd;
 }
 .img-btn {
   width: 16px;

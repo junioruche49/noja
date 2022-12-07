@@ -2,13 +2,8 @@
   <transaction-list />
 </template>
 
-<script>
+<script setup>
 import TransactionList from "./views/TransactionList.vue";
-export default {
-  components: {
-    TransactionList,
-  },
-};
 </script>
 
 <style></style>

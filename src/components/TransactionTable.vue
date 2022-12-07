@@ -5,7 +5,7 @@
         <tr>
           <th></th>
           <th>Date</th>
-          <th>Customer Name</th>
+          <th>Customer Name <img src="../assets/sort-down.svg" /></th>
           <th>Amount</th>
           <th>Payment Method</th>
           <th>Products</th>
@@ -73,11 +73,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "TransactionTable",
-};
-</script>
 <style scoped>
 thead tr th {
   font-size: 0.8rem;

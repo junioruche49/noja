@@ -1,17 +1,14 @@
 <template>
   <ul>
-    <nav-bar v-for="page in pages" :page="page" :key="page.name" />
+    <nav-bar v-for="page in pages.pages" :page="page" :key="page.name" />
   </ul>
 </template>
-<script>
+<script setup lang="ts">
 import NavBar from "./NavBar.vue";
-export default {
-  components: { NavBar },
-  name: "NavBars",
-  props: {
-    pages: Array,
-  },
-};
+import { defineProps } from "vue";
+const pages = defineProps({
+  pages: Array,
+});
 </script>
 <style scoped>
 ul {

@@ -1,16 +1,14 @@
 <template>
-  <button :class="[btnClass, 'btn-2']" :type="type">
+  <button :class="[props.btnClass, 'btn-2']" :type="props.type">
     <slot></slot>
   </button>
 </template>
-<script>
-export default {
-  name: "BaseButton",
-  props: {
-    type: String,
-    btnClass: String,
-  },
-};
+<script setup lang="ts">
+import { defineProps } from "vue";
+const props = defineProps({
+  type: String,
+  btnClass: String,
+});
 </script>
 <style>
 .btn-2 {
@@ -26,11 +24,11 @@ export default {
 .primary {
   background: #f0f0fe;
   color: #6868f7;
-  border: 0.5px solid #6868f7;
+  border: 1px solid #6868f7;
 }
 .secondary {
   background: rgba(235, 87, 87, 0.1);
-  border: 0.5px solid #eb5757;
+  border: 1px solid #eb5757;
   color: #eb5757;
 }
 .tertiary {

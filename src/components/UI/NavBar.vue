@@ -1,20 +1,16 @@
 <template>
-  <li :class="page.status == true ? 'active' : ''">
-    <img :src="image" class="mr-2" /> {{ page.name }}
+  <li>
+    <router-link to="/" :class="props.page.status == true ? 'active' : ''">
+      <img :src="image" class="mr-2" /> {{ props.page.name }}
+    </router-link>
   </li>
 </template>
-<script>
-export default {
-  name: "NavBar",
-  props: {
-    page: Object,
-  },
-  data() {
-    return {
-      image: require(`../../assets/${this.page.icon}`),
-    };
-  },
-};
+<script setup lang="ts">
+import { defineProps } from "vue";
+const props = defineProps({
+  page: Object,
+});
+const image = require(`../../assets/${props.page.icon}`);
 </script>
 <style scoped>
 li {
@@ -22,7 +18,15 @@ li {
   font-size: 0.9rem;
   font-weight: 500;
 }
-.active {
+a {
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+}
+.active,
+a:active,
+a.router-link-active {
   color: #6868f7;
   font-weight: bold;
 }

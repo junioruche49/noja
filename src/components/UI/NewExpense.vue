@@ -7,7 +7,7 @@
             <h6>New Expense</h6>
           </div>
           <div class="col-6 text-right">
-            <base-button @click="$emit('toggle-expense')"
+            <base-button @click="$emit(emits('toggle-expense'))"
               ><img src="../../assets/x.svg" class="img-btn" />
             </base-button>
           </div>
@@ -70,11 +70,9 @@
     </div>
   </teleport>
 </template>
-<script>
-export default {
-  name: "NewExpense",
-  emits: ["toggle-expense"],
-};
+<script setup lang="ts">
+import { defineEmits } from "vue";
+const emits = defineEmits(["toggle-expense"]);
 </script>
 
 <style scoped>
@@ -93,7 +91,7 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 35%;
   z-index: 100;
   border-radius: 12px;
   border: none;
