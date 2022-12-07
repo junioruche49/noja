@@ -1,14 +1,14 @@
 
-<script setup lang="ts">
+<script setup>
 import Wrapper from "../components/layouts/Wrapper.vue";
 import TransactionHeader from "../components/TransactionHeader.vue";
 import { ref } from "vue";
 import NewExpense from "@/components/UI/NewExpense.vue";
 import TransactionTable from "@/components/TransactionTable.vue";
 
-let newExpenseForm = ref<boolean>(false);
+let newExpenseForm = ref(false);
 
-function toggleNewExpenseForm(): void {
+function toggleNewExpenseForm() {
   newExpenseForm.value = !newExpenseForm.value;
 }
 </script>

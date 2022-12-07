@@ -7,7 +7,7 @@
             <h6>New Expense</h6>
           </div>
           <div class="col-6 text-right">
-            <base-button @click="$emit(emits('toggle-expense'))"
+            <base-button @click="emits('toggle-expense')"
               ><img src="../../assets/x.svg" class="img-btn" />
             </base-button>
           </div>

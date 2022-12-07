@@ -8,7 +8,7 @@
         >
         <base-button
           class="secondary mr-3 pr-3"
-          @click="$emit(emits('toggle-expense'))"
+          @click="emits('toggle-expense')"
           ><img src="../assets/plus-2.svg" class="img-btn mr-2 ml-1" /> Add
           Expense</base-button
         >
@@ -26,7 +26,7 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
 import BaseButton from "./UI/BaseButton.vue";
 import { defineEmits } from "vue";
 const emits = defineEmits(["toggle-expense"]);

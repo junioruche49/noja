@@ -1,16 +1,17 @@
 <template>
   <li>
-    <router-link to="/" :class="props.page.status == true ? 'active' : ''">
-      <img :src="image" class="mr-2" /> {{ props.page.name }}
+    <router-link to="/" :class="page.status == true ? 'active' : ''">
+      <img :src="image" class="mr-2" /> {{ page.name }}
     </router-link>
   </li>
 </template>
-<script setup lang="ts">
-import { defineProps } from "vue";
+<script setup>
+import { defineProps, toRefs } from "vue";
 const props = defineProps({
   page: Object,
 });
-const image = require(`../../assets/${props.page.icon}`);
+const { page } = toRefs(props);
+const image = require(`../../assets/${page.value.icon}`);
 </script>
 <style scoped>
 li {

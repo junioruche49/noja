@@ -1,14 +1,15 @@
 <template>
-  <button :class="[props.btnClass, 'btn-2']" :type="props.type">
+  <button :class="[btnClass, 'btn-2']" :type="type">
     <slot></slot>
   </button>
 </template>
-<script setup lang="ts">
-import { defineProps } from "vue";
+<script setup>
+import { defineProps, toRefs } from "vue";
 const props = defineProps({
   type: String,
   btnClass: String,
 });
+const { type, btnClass } = toRefs(props);
 </script>
 <style>
 .btn-2 {
